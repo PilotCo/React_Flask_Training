@@ -1,0 +1,86 @@
+Notes:
+
+Arrow Functions
+    function functionName (parameters) {
+        return returnValue;
+    };
+
+    This can be rewritten as:
+    const functionName = (parameters) => {
+        return returnValue;
+    };
+
+    Or for short function definitions:
+    const functionName = (parameters) => returnValue;
+    
+    Note: Arrow functions do not have their own 'this' context. So they are unusable as object methods. 
+    
+Destructuring
+    Definition: JavaScript expression that ensures you are able to extract multiple values from arrays or properties from objects into seperate unique variables.
+
+    Examples:
+        const speakers = ["john", "cody", "dennis", "justin"]
+        const [firstSpeaker, secondSpeaker, thirdSpeaker, fourthSpeaker] = speakers
+        console.log(secondSpeaker) // "cody"
+
+        // John is a bad speaker, so let's exclude him
+        const speakers = ["john", "cody", "dennis", "justin"]
+        const [, ...rest] = speakers // the ... used is the spread operator
+        console.log(rest) // "cody", "dennis", "justin"
+
+
+        // This example shows Destructuring with an object
+        const speakers = {
+            id: 1,
+            name: "Juliet Runolf",
+            jobTitle: "Director, Marketing",
+            company: "Abernatny Group",
+            address: {
+            street: "Okaland Dtuse",
+            city: "Greenland",
+            state: "Houston",
+            country: "USA",
+            }
+        }
+        function App()
+        {
+            const {name, jobTitle, company} = speakers;
+            //destructuring of object properties
+            return (
+                <>
+                    <div>
+                        <h2>Name: {name}</h2>
+                        <h4>Position: {jobTitle}</h4>
+                        <h4>Company: {company}</h4>
+                    </div>
+                </>
+            );
+        }
+
+        // now let's destruct the nested address property
+        const {name, jobTitle, company, address} = speakers;
+        // destructuring of object properties
+        const {street, city, state, country} = address;
+        // destructuring of nested address property
+        return (
+            <div>
+                <h2>Name: {name}</h2>
+                <h4>Position: {jobTitle}</h4>
+                <h4>Company: {company}</h4>
+                <h4>Street: {street}</h4>
+                <h4>City: {city}</h4>
+                <h4>State: {state}</h4>
+                <h4>Country: {country}</h4>
+            </div>
+        );
+    
+    So, what are the benefits of destructuring in React applications? Destructuring makes your code more
+    compact and easier to understand. It allows you to extract specific properties from objects or elements
+    from arrays directly, reducing the need for repetitive dot notation or array indexing.
+
+    Destructuring also allows you to set default values for properties
+    const { name = 'Anonymous', age = 0} = speaker
+
+    destructuring allows programmers to access data, even complex nested data in arrays and objects, in an easy way. It substantially improves the quality of code readability and access.
+    It helps to cut the amount of code used in an application.
+
