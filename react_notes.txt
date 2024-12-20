@@ -84,3 +84,7 @@ Destructuring
     destructuring allows programmers to access data, even complex nested data in arrays and objects, in an easy way. It substantially improves the quality of code readability and access.
     It helps to cut the amount of code used in an application.
 
+Props 
+    Props or properties are always passed from the parent element to the child element. This alows for more reusability with the 
+    components. 
+

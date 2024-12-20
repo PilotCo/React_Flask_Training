@@ -1,13 +1,20 @@
 import './App.css';
+import SearchSpeaker from './SearchSpeaker/SearchSpeaker';
 import SpeakerProfile from './SpeakerProfile';
+import React from 'react';
 
-const coolGuyName = 'Cody Pilot';
+
 
 function App() {
   return (
-    <div style={{backgroundColor: 'gray', margin:20, color:'white'}}>
-      <SpeakerProfile />
-      <h1>Welcome to Bizza Platform, {coolGuyName}</h1>
+    <div style={{backgroundColor: 'blue', margin:20, color: 'white'}}>
+      <h1>Speaker Profile</h1>
+      <SpeakerProfile 
+        name='Cody Pilot'
+        jobTitle='Professional Bad Ass'
+        company='Bad Asses Incorporated'
+      />
+      <SearchSpeaker/>
     </div>
   );
 }
